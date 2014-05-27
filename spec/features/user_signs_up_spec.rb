@@ -4,8 +4,8 @@ feature "User signs up" do
   scenario "happy path" do
     visit '/'
     click_link "I'm Ready!"
-    pending
     fill_in "Email", with: "joe@example.com"
+    pending
     fill_in "Username", with: "joe"
     fill_in "Password", with: "mypassword"
     fill_in "Password confirmation", with: "mypassword"

@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: squmblr_production
-  username: squmblr
-  password: <%= ENV['SQUMBLR_DATABASE_PASSWORD'] %>

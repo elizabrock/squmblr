@@ -6,6 +6,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %header
+      %ul.devise_navigation
+        - if user_signed_in?
+          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+        - else
+          %li= link_to 'Sign in', new_user_session_path
     .alert= alert
     .notice= notice
     = yield

@@ -13,13 +13,16 @@ feature "User signs up" do
     page.should have_content "Welcome to Squmblr!"
     page.should_not have_link("I'm Ready!")
 
-    pending
     click_link "Sign out"
     click_link "Sign in"
     fill_in "Email", with: "joe@example.com"
     fill_in "Password", with: "mypassword"
-    click_button "Log in"
+    click_button "Sign in"
     page.should have_content "You have signed in successfully"
+  end
+
+  scenario "signing in with username, rather than email" do
+    # PR 5: username signin
   end
 
   scenario "failed signup" do

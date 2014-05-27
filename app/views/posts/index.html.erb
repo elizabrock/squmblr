@@ -1,4 +1,4 @@
-<h1>Posts</h1>
+<h1>These are your Squmbles:</h1>
 
 <ul class="post">
   <% @posts.each do |post| %>
@@ -6,3 +6,5 @@
     <%= post.created_at %>
   <% end %>
 </ul>
+
+<%= link_to '<button type="button">New Squmble</button>'.html_safe, new_post_path %>

@@ -5,18 +5,23 @@ feature "User signs up" do
     visit '/'
     click_link "I'm Ready!"
     fill_in "Email", with: "joe@example.com"
-    pending
     fill_in "Username", with: "joe"
     fill_in "Password", with: "mypassword"
     fill_in "Password confirmation", with: "mypassword"
     # PR 1: Captchas
     click_button "Sign up"
-    page.should have_content "Welcome to Squmblr, joe!"
-    current_path.should == dashboard_path
+    page.should have_content "Welcome to Squmblr!"
+    page.should_not have_link("I'm Ready!")
+
+    click_link "Sign out"
+    click_link "Sign in"
+    fill_in "Email", with: "joe@example.com"
+    fill_in "Password", with: "mypassword"
+    click_button "Log in"
+    page.should have_content "You have signed in successfully"
   end
 
   scenario "failed signup" do
-    pending
     User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
     visit '/'
     click_link "I'm Ready!"
@@ -29,8 +34,8 @@ feature "User signs up" do
     page.should_not have_content "Welcome to Squmblr"
     page.should have_content "Your account could not be created."
 
-    page.should have_error("already exists", on: "Email")
-    page.should have_error("must match confirmation", on: "Password")
+    page.should have_error("has already been taken", on: "Email")
+    page.should have_error("doesn't match Password", on: "Password confirmation")
     page.should have_error("must be unique", on: "Username")
   end
 

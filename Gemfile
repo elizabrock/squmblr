@@ -23,6 +23,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'rspec'
+  gem 'letter_opener'
 end
 
 group :test do

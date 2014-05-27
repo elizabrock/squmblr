@@ -1,0 +1,8 @@
+<h1>Posts</h1>
+
+<ul class="post">
+  <% @posts.each do |post| %>
+    <%= post.content %>
+    <%= post.created_at %>
+  <% end %>
+</ul>

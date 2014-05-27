@@ -16,3 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 group :development do
   gem 'spring'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec'
+end

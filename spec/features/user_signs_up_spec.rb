@@ -13,6 +13,7 @@ feature "User signs up" do
     page.should have_content "Welcome to Squmblr!"
     page.should_not have_link("I'm Ready!")
 
+    pending
     click_link "Sign out"
     click_link "Sign in"
     fill_in "Email", with: "joe@example.com"
@@ -36,7 +37,7 @@ feature "User signs up" do
 
     page.should have_error("has already been taken", on: "Email")
     page.should have_error("doesn't match Password", on: "Password confirmation")
-    page.should have_error("must be unique", on: "Username")
+    page.should have_error("has already been taken", on: "Username")
   end
 
   scenario "user fills in wrong captcha" do

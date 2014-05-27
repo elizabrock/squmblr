@@ -1,0 +1,7 @@
+%h1 These are your Squmbles:
+%ul.post
+  - @posts.each do |post|
+    .post
+      = post.content
+      = post.created_at
+= link_to '<button type="button">New Squmble</button>'.html_safe, new_post_path

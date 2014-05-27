@@ -2,8 +2,10 @@
 
 <ul class="post">
   <% @posts.each do |post| %>
-    <%= post.content %>
-    <%= post.created_at %>
+    <div class="post">
+      <%= post.content %>
+      <%= post.created_at %>
+    </div>
   <% end %>
 </ul>
 

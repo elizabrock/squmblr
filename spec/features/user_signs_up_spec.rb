@@ -15,7 +15,7 @@ feature "User signs up" do
 
     click_link "Sign out"
     click_link "Sign in"
-    fill_in "Login", with: "joe@example.com"
+    fill_in "Email", with: "joe@example.com"
     fill_in "Password", with: "mypassword"
     click_button "Sign in"
     page.should have_content "You have signed in successfully"

@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
     #   user.update_attribute(:github_access_token, auth_token)
     # end
     user
+  end
 
   after_create :send_welcome_email
 

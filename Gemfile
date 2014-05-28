@@ -32,4 +32,5 @@ group :test do
   gem 'fabrication'
   gem 'launchy'
   gem 'shoulda'
+  gem 'webmock'
 end

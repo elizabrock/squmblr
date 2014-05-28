@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
     hash =  md5.hexdigest(email.strip.downcase)
     return 'http://www.gravatar.com/avatar/' + hash
   end
+
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
+  end
 end

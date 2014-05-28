@@ -22,6 +22,9 @@ describe "Welcome email" do
   it "should actually welcome the user to Squmblr" do
     @mail.should have_body_text("Welcome to Squmblr, #{@user.email}!")
   end
+  it "should have a link to the site in it" do
+    @mail.should have_body_text("To login to the site, just follow this link: #{root_url}.")
+  end
   it "shouldn't have this text in it" do
     @mail.should_not have_body_text("intentionally bad text")
   end

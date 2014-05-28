@@ -6,15 +6,15 @@ Meme Blogging / Nerd Tumblr
 
 First PR Features:
 =========
- 1. Captcha
- 2. Welcome emails
- 3. Oauth w/ Github
- 4. Password Reset (incl. emails)
- 5. Username signin
- 6. Account edit
- 7. Gravatar / User profile page
- 8. Start stylin'
- 9. Post index page (just a list of posts with title and content; no need for new/create)
+ 1. Captcha [Steven + Sam]
+ 2. Welcome emails [Jeremy + Max + Mitch]
+ 3. Oauth w/ Github [Nat + Adam]
+ 4. Password Reset (incl. emails) [Robert + Peder]
+ 5. Username signin [Drew + Randy]
+ 6. Account edit [Giovanni + James]
+ 7. Gravatar / User profile page [Matt + Matt]
+ 8. Start stylin' [Sam W. + Spencer]
+ 9. Post index page [Aimee + Tyler]
 
 -- Webmock
 

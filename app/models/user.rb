@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:github]
 
+  has_many :posts
   validates :username, uniqueness: true
 
   def self.find_or_create_for_github_oauth(auth)
@@ -20,5 +21,10 @@ class User < ActiveRecord::Base
     #   user.update_attribute(:github_access_token, auth_token)
     # end
     user
+
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.welcome_email(self).deliver
   end
 end

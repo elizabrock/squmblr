@@ -26,10 +26,15 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'rspec'
+  gem 'letter_opener'
+  gem 'email_spec'
 end
 
 group :test do
   gem 'capybara'
+  gem 'fabrication'
   gem 'launchy'
   gem 'shoulda'
+  gem 'vcr'
+  gem 'webmock'
 end

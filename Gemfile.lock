@@ -44,6 +44,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -51,6 +53,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.0.2)
     faraday (0.9.0)
@@ -58,6 +63,7 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    fabrication (2.11.2)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -78,6 +84,8 @@ GEM
     jwt (1.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -146,6 +154,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -187,8 +196,12 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vcr (2.9.2)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.18.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -200,12 +213,15 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
+  email_spec
+  fabrication
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   omniauth
   omniauth-github
+  letter_opener
   pg
   rails (= 4.1.1)
   rspec
@@ -217,3 +233,5 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
+  vcr
+  webmock

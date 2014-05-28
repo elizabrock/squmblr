@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :posts, except: [:show, :edit, :update, :destroy]
   root to: "home#index"
 
   devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }

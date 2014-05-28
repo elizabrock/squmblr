@@ -28,4 +28,3 @@ feature "User recovers password" do
     page.should have_content "not found"
   end
 end
-

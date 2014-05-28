@@ -9,8 +9,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    redirect_to "/posts"
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:notice] = "Your squmbl has been created"
+      redirect_to posts_path
+    else
+      flash[:alert] = "Your squmbl could not be created"
+      render :new
+    end
   end
 
   private

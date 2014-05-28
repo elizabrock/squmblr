@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "home#index"
 
   resources :posts, except: [:show, :edit, :update, :destroy]

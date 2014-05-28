@@ -7,19 +7,15 @@
     = csrf_meta_tags
   %body
     %header
-      %nav.top-bar{ :data => :topbar }
-        %ul.title-area
-          %li.name=link_to 'Home', "/"
-          %li.toggle-topbar.menu-icon
-            = link_to '#', class: 'link' do
-              %span Menu
-        %section.top-bar-section
-          %ul.right.devise_navigation
-            - if user_signed_in?
-              %li.active= link_to 'Sign out', destroy_user_session_path, method: 'delete'
-            - else
-              %li= link_to 'Sign in', new_user_session_path
-      %br
-        .alert= alert
-        .notice= notice
-        = yield
+      %ul.devise_navigation
+        - if user_signed_in?
+          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+        - else
+          %li= link_to 'Sign in', new_user_session_path
+      %ul.main_navigation
+        %li= link_to "squmbls", posts_path
+        - if user_signed_in?
+          %li= link_to "write a squmbl", new_post_path
+    .alert= alert
+    .notice= notice
+    = yield

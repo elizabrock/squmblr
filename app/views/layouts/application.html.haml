@@ -1,17 +1,25 @@
 !!!
 %html
   %head
-    %title Squmblr
+    %title squmblr
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     %header
-      %ul.devise_navigation
-        - if user_signed_in?
-          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-    .alert= alert
-    .notice= notice
-    = yield
+      %nav.top-bar{ :data => :topbar }
+        %ul.title-area
+          %li.name=link_to 'Home', "/"
+          %li.toggle-topbar.menu-icon
+            = link_to '#', class: 'link' do
+              %span Menu
+        %section.top-bar-section
+          %ul.right.devise_navigation
+            - if user_signed_in?
+              %li.active= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+            - else
+              %li= link_to 'Sign in', new_user_session_path
+      %br
+        .alert= alert
+        .notice= notice
+        = yield

@@ -13,7 +13,6 @@ feature "User views posts" do
     visit root_path
     click_link "squmbls"
     page.should have_content "These are your squmbls:"
-    page.should have_content "new squmbl"
     page.should have_content("joe squmbd: I'm a teapot")
     page.should have_content("jill squmbd: Meme")
     page.should have_content("jill squmbd: Gandalf")

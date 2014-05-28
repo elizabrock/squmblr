@@ -6,4 +6,5 @@
       squmbd:
       = post.content
       = post.created_at
-= link_to 'new squmbl', new_post_path
+- if user_signed_in?
+  = link_to 'new squmbl', new_post_path

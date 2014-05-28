@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
       user.username = auth.info.name
       # user.gravatar = auth.extra.raw_info.gravatar_id
     end
-    # unless user.github_access_token == auth_token
-    #   user.update_attribute(:github_access_token, auth_token)
-    # end
+    unless user.token == auth_token
+      user.update_attribute(:token, auth_token)
+    end
     user
   end
 

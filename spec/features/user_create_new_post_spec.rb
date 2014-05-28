@@ -2,15 +2,8 @@ require 'spec_helper'
 
 feature "New posts" do
 
-  background do
-    Fabricate(:user, email: "ruby@example.com", username: "ruby")
-    visit new_user_session_path
-    fill_in "Email", with: "ruby@example.com"
-    fill_in "Password", with: "password"
-    click_button "Sign in"
-  end
-
   scenario "user creates a new post" do
+    login_as Fabricate(:user, email: "ruby@example.com", username: "ruby")
     click_link "write a squmbl"
     fill_in "Content", with: "Text input with body for test!"
     click_button "create squmbl"
@@ -20,6 +13,7 @@ feature "New posts" do
   end
 
   scenario "user fails to create a new post" do
+    login_as Fabricate(:user, email: "ruby@example.com", username: "ruby")
     click_link "write a squmbl"
     fill_in "Content", with: ""
     click_button "create squmbl"

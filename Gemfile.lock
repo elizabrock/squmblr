@@ -104,6 +104,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    recaptcha (0.3.6)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -179,6 +180,7 @@ DEPENDENCIES
   launchy
   pg
   rails (= 4.1.1)
+  recaptcha
   rspec
   rspec-rails
   sass-rails (~> 4.0.3)

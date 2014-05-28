@@ -2,6 +2,7 @@ ruby '2.1.1'
 #ruby-gemset=squmblr
 source 'https://rubygems.org'
 
+gem 'recaptcha', :require=>'recaptcha/rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'haml-rails'

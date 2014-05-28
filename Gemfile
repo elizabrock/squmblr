@@ -29,4 +29,5 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda'
+  gem 'fabrication'
 end

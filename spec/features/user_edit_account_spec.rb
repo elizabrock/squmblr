@@ -1,14 +1,20 @@
 require 'spec_helper'
 
 feature "User edits account" do
-  scenario "happy path" do
+
+  background do #<-- rspec
     User.create(email: "joe@example.com", password: "mypassword")
-    visit '/'
+    visit root_path
     click_link "Sign in"
     fill_in "Email", with: "joe@example.com"
     fill_in "Password", with: "mypassword"
     click_button "Sign in"
-    visit '/users/edit'
+  end
+
+
+  scenario "happy path" do
+    #save_and_open_page
+    visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"
@@ -20,13 +26,7 @@ feature "User edits account" do
   end
 
   scenario "user enters wrong password confirmation" do
-    User.create(email: "joe@example.com", password: "mypassword")
-    visit '/'
-    click_link "Sign in"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "mypassword"
-    click_button "Sign in"
-    visit '/users/edit'
+    visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "notnewpassword"
@@ -35,16 +35,11 @@ feature "User edits account" do
     page.should have_content "Please review the problems below:"
 
     page.should have_error("doesn't match Password", on: "Password confirmation")
+    #save_and_open_page
   end
 
   scenario "user enters wrong current password" do
-    User.create(email: "joe@example.com", password: "mypassword")
-    visit '/'
-    click_link "Sign in"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "mypassword"
-    click_button "Sign in"
-    visit '/users/edit'
+    visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"
@@ -56,13 +51,7 @@ feature "User edits account" do
   end
 
   scenario "user leaves email blank" do
-    User.create(email: "joe@example.com", password: "mypassword")
-    visit '/'
-    click_link "Sign in"
-    fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "mypassword"
-    click_button "Sign in"
-    visit '/users/edit'
+    visit edit_user_registration_path
     fill_in "Email", with: ""
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"

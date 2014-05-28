@@ -58,12 +58,12 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.0.2)
+    fabrication (2.11.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
-    fabrication (2.11.2)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -212,16 +212,16 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise
-  figaro
   email_spec
   fabrication
+  figaro
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  letter_opener
   omniauth
   omniauth-github
-  letter_opener
   pg
   rails (= 4.1.1)
   rspec

@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "New posts" do
 
   background do
-    User.create(email: "ruby@example.com", username: "ruby", password: "password", password_confirmation: "password")
+    Fabricate(:user, email: "ruby@example.com", username: "ruby")
     visit new_user_session_path
     fill_in "Email", with: "ruby@example.com"
     fill_in "Password", with: "password"

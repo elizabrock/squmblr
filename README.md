@@ -16,6 +16,13 @@ First PR Features:
  8. Start stylin' [Sam W. + Spencer]
  9. Post index page [Aimee + Tyler]
 
+
+Second PR Features:
+==========
+ 1. Image uploads with carrierwave [Tyler + Aimee]
+
+
+
 -- Webmock
 
 Features:

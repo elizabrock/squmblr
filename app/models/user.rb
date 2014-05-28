@@ -9,7 +9,5 @@ class User < ActiveRecord::Base
     self.where("username = ?", conditions[:email]).limit(1).first ||
     self.where("email = ?", conditions[:email]).limit(1).first
   end
-
   validates :username, uniqueness: true
-
 end

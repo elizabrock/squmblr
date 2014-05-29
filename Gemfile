@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form'
 gem 'turbolinks'

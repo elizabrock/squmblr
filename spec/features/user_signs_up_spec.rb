@@ -23,6 +23,25 @@ feature "User signs up" do
 
   scenario "signing in with username, rather than email" do
     # PR 5: username signin
+    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    visit '/'
+    click_link 'Sign in'
+    fill_in 'Email/Username', with: 'joe'
+    fill_in 'Password', with: 'password'
+    click_button 'Sign in'
+    page.should have_content('You have signed in successfully')
+    page.should_not have_link("I'm Ready")
+  end
+
+  scenario "failed login" do
+    # PR 5: username signin
+    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    visit '/'
+    click_link 'Sign in'
+    fill_in 'Email/Username', with: 'joeieieie'
+    fill_in 'Password', with: 'password'
+    click_button 'Sign in'
+    page.should have_content('Invalid login or password')
   end
 
   scenario "failed signup" do

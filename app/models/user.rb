@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
     end
     user
   end
+  has_many :follows
 
   def gravatar_url
     md5 = Digest::MD5.new
@@ -50,5 +51,18 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.welcome_email(self).deliver
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+    else
+      where(conditions).first
+    end
+  end
+
+  def follow(user_to_follow)
+
   end
 end

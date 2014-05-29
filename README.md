@@ -20,18 +20,36 @@ First PR Features:
 Second PR Features:
 ==========
  1. Image uploads with carrierwave [Tyler + Aimee]
+ 2. Individual squmblogs (w/ following) [Max + Mitch + Jeremy]
+ 3. Up/Down/Meh voting!! (w/ rjs and poltergeist) [Peder + Robert]
+ 4. Social Sharing + pretty urls on user pages [Matt + Matt]
+ 5. Mailer Layouts / Pretty Emails (take a look at mailview gem) [James + Giovanni]
+ 6. Meme APIs!! [Randy + Drew]
+ 7. Comments [Spencer + Sam W.]
+ 8. Draft Posts (w/ ability to edit before publishing) [Nat + Adam]
+ 9. Admin Panel (active\_admin, selectively enable features) [Sam T. + Steven]
 
 
+Third PR Features:
+==================
 
--- Webmock
+ 1. Resque / Queued Emails [Aimee]
+
+Comment Notifications
+
+Future Class Features:
+======================
+
+ 1. Infinite Scroll
+ 2. SSL
+ 3. Postmark
+
 
 Features:
 =========
 
 Sign Up Process:
 
-  * OAuth w/ Github
-  * Captcha
   * Theme
 
 Blog Posts:
@@ -45,25 +63,9 @@ Blog Posts:
   * Tweet mocking
   * YouTube links
 
-Comments
-
-Draft posts!
-
-Emails:
-
-  * Resque / Queued Emails
-  * Mailer Layouts
-  * Postmark
-
 Blogs:
 
-  * Follow
   * Recommended blogs?
-
-Dashboard:
-
-  * Post blogs
-  * View stream
 
 Admin:
 
@@ -71,14 +73,10 @@ Admin:
   * Censoring
   * Etc.
 
-Add-ons:
+Maybe?
+======
 
-  * Infinite scroll
   * Ecommerce integration (gilding posts)
-  * SSL!
-  * Notifications
-  * Voting
-  * Social Sharing!
   * Spamming / Invitations
 
 

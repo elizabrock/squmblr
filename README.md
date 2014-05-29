@@ -99,3 +99,16 @@ Maybe?
 * Deployment instructions
 
 * ...
+
+## Setup Instructions
+
+In order to utilize functionality of Figaro (which allows you to hide secrets and keys),
+follow the below instructions:
+
+1. Copy `config/application.yml.example` to `config/application.yml`
+2. Fill in the correct Github API key (either get them from Eliza or set one up under developer applications, here: https://github.com/settings/applications)
+3. `rake db:create:all`
+4. `rake db:migrate`
+5. `rake`
+6. Confirm that rake passed.  If it didn't, that means your setup is missing something.
+7. Make sure `config/application.yml` is in your .gitignore file

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature "User edits account" do
-
   background do #<-- rspec
     User.create(email: "joe@example.com", password: "mypassword")
     visit root_path
@@ -10,10 +9,7 @@ feature "User edits account" do
     fill_in "Password", with: "mypassword"
     click_button "Sign in"
   end
-
-
   scenario "happy path" do
-    #save_and_open_page
     visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
@@ -21,10 +17,8 @@ feature "User edits account" do
     fill_in "Current password", with: "mypassword"
     click_button "Update"
     page.should have_content "You updated your account successfully."
-
     page.should_not have_link("Update")
   end
-
   scenario "user enters wrong password confirmation" do
     visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
@@ -33,11 +27,8 @@ feature "User edits account" do
     fill_in "Current password", with: "mypassword"
     click_button "Update"
     page.should have_content "Please review the problems below:"
-
     page.should have_error("doesn't match Password", on: "Password confirmation")
-    #save_and_open_page
   end
-
   scenario "user enters wrong current password" do
     visit edit_user_registration_path
     fill_in "Email", with: "elvis@example.com"
@@ -46,10 +37,8 @@ feature "User edits account" do
     fill_in "Current password", with: "notmypassword"
     click_button "Update"
     page.should have_content "Please review the problems below:"
-
     page.should have_error("is invalid", on: "Current password")
   end
-
   scenario "user leaves email blank" do
     visit edit_user_registration_path
     fill_in "Email", with: ""
@@ -58,7 +47,6 @@ feature "User edits account" do
     fill_in "Current password", with: "mypassword"
     click_button "Update"
     page.should have_content "Please review the problems below:"
-
     page.should have_error("can't be blank", on: "Email")
   end
 end

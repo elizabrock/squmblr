@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :recoverable, :trackable, :validatable
 
+
   has_many :posts
   validates :username, uniqueness: true
 

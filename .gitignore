@@ -15,3 +15,6 @@
 /log/*.log
 /tmp
 .idea
+
+# Ignore secrets and keys
+/config/application.yml

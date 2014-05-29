@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :posts
-  devise_for :users, controllers: { registrations: 'registrations' }
   root to: "home#index"
+
+  devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: :omniauth_callbacks }
+
+  resources :posts, except: [:show, :edit, :update, :destroy]
+  resources :users, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

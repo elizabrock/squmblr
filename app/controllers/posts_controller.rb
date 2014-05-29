@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @posts = Post.all
@@ -18,6 +18,10 @@ class PostsController < ApplicationController
       flash[:alert] = "Your squmbl could not be created"
       render :new
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private

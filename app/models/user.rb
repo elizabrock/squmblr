@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.username = auth.info.name
-      # user.gravatar = auth.extra.raw_info.gravatar_id
+      user.github_avatar = auth.extra.raw_info.gravatar_id
     end
     unless user.token == auth_token
       user.update_attribute(:token, auth_token)

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, only: :show
+  #resources :users, only: :show
   resources :posts, except: [:show, :edit, :update, :destroy]
   root to: "home#index"
+
+  get 'users/:username', to: 'users#show', as: :user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,17 +8,23 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:github]
 
   has_many :posts
+
   validates :username, uniqueness: true
+
+  after_create :send_welcome_email
 
   def self.find_for_database_authentication(conditions={})
     self.where("username = ?", conditions[:email]).limit(1).first ||
     self.where("email = ?", conditions[:email]).limit(1).first
   end
 
-  def gravatar_url
-    md5 = Digest::MD5.new
-    hash =  md5.hexdigest(email.strip.downcase)
-    return 'http://www.gravatar.com/avatar/' + hash
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+    else
+      where(conditions).first
+    end
   end
 
   def self.find_or_create_for_github_oauth(auth)
@@ -37,18 +43,15 @@ class User < ActiveRecord::Base
     user
   end
 
-  after_create :send_welcome_email
+  def gravatar_url
+    md5 = Digest::MD5.new
+    hash =  md5.hexdigest(email.strip.downcase)
+    return 'http://www.gravatar.com/avatar/' + hash
+  end
+
+  private
 
   def send_welcome_email
     UserMailer.welcome_email(self).deliver
-  end
-
-  def self.find_first_by_auth_conditions(warden_conditions)
-    conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
-    else
-      where(conditions).first
-    end
   end
 end

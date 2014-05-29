@@ -8,6 +8,6 @@
   = f.input :username
   = f.input :password
   = f.input :password_confirmation
-  = recaptcha_tags
+  = recaptcha_tags :display => {theme: 'clean'}
   = f.button :submit, "Sign up"
 = render "devise/shared/links"

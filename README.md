@@ -49,6 +49,12 @@ Comments
 
 Draft posts!
 
+Emails:
+
+  * Resque / Queued Emails
+  * Mailer Layouts
+  * Postmark
+
 Blogs:
 
   * Follow

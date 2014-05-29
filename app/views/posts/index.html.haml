@@ -2,6 +2,7 @@
 %ul.post
   - @posts.each do |post|
     .post
+    - unless post.published == false
       = post.user.username
       squmbd:
       = post.content

@@ -6,16 +6,22 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      %ul.devise_navigation
-        - if user_signed_in?
-          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-      %ul.main_navigation
-        %li= link_to "squmbls", posts_path
-        - if user_signed_in?
-          %li= link_to "write a squmbl", new_post_path
-    .alert= alert
+    %nav.top-bar{"data-topbar" => ""}
+      %ul.title-area
+        %li.name
+          %h1
+            %a{href: "/"} squmblr
+        %ul.main_navigation
+          %li= link_to "squmbls", posts_path
+          - if user_signed_in?
+            %li= link_to "write a squmbl", new_post_path
+        %ul.devise_navigation
+          - if user_signed_in?          
+            %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
+          - else            
+            %li= link_to 'Sign up', new_user_registration_path
+            %li= link_to 'Sign in', new_user_session_path
+    .alerti= alert
     .notice= notice
     = yield
+

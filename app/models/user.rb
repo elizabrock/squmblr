@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
 
   has_many :posts
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true,
+                       format: { with: /\A[a-zA-Z]+\z/, message: "username can only contain letters"}
 
   def gravatar_url
     md5 = Digest::MD5.new

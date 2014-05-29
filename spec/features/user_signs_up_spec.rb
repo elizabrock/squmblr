@@ -8,7 +8,7 @@ feature "User signs up" do
     fill_in "Username", with: "joe"
     fill_in "Password", with: "mypassword"
     fill_in "Password confirmation", with: "mypassword"
-    # PR 1: Captchas
+    fill_in recaptcha_response_field
     click_button "Sign up"
     page.should have_content "Welcome to Squmblr!"
     page.should_not have_link("I'm Ready!")
@@ -63,7 +63,17 @@ feature "User signs up" do
   end
 
   scenario "user fills in wrong captcha" do
-    # PR 1: Captchas
+    visit '/'
+    click_link "I'm Ready!"
+    fill_in "Email", with: "joe@example.com"
+    fill_in "Username", with: "joe"
+    fill_in "Password", with: "mypassword"
+    fill_in "Password confirmation", with: "mypassword"
+    click_button "Sign up"
+    page.should_not have_content "Welcome to Squmblr"
+    page.should have_content "Your account could not be created."
+    page.should have_content "The reCAPTCHA code you entered was incorrect."
+
   end
 
   scenario "user receives welcome email" do

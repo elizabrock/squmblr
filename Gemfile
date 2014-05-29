@@ -2,6 +2,7 @@ ruby '2.1.1'
 #ruby-gemset=squmblr
 source 'https://rubygems.org'
 
+gem 'recaptcha', :require=>'recaptcha/rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'figaro'
@@ -13,6 +14,7 @@ gem 'omniauth-github'
 gem 'pg'
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form'
 gem 'turbolinks'

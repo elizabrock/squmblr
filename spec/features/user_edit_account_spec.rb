@@ -10,7 +10,7 @@ feature "User edits account" do
     click_button "Sign in"
   end
   scenario "happy path" do
-    visit edit_user_registration_path
+    click_link "edit profile"
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"
@@ -20,7 +20,7 @@ feature "User edits account" do
     page.should_not have_link("Update")
   end
   scenario "user enters wrong password confirmation" do
-    visit edit_user_registration_path
+    click_link "edit profile"
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "notnewpassword"
@@ -30,7 +30,7 @@ feature "User edits account" do
     page.should have_error("doesn't match Password", on: "Password confirmation")
   end
   scenario "user enters wrong current password" do
-    visit edit_user_registration_path
+    click_link "edit profile"
     fill_in "Email", with: "elvis@example.com"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"
@@ -40,7 +40,7 @@ feature "User edits account" do
     page.should have_error("is invalid", on: "Current password")
   end
   scenario "user leaves email blank" do
-    visit edit_user_registration_path
+    click_link "edit profile"
     fill_in "Email", with: ""
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"

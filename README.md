@@ -86,6 +86,8 @@ Maybe?
 
 * System dependencies
 
+  * Imagemagick
+
 * Configuration
 
 * Database creation

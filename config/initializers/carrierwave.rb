@@ -2,6 +2,9 @@ CarrierWave.configure do |config|
   if Rails.env.test?
     config.storage = :file
     config.enable_processing = false
+  elsif Rails.env.development?
+    config.storage = :file
+    config.enable_processing = true
   else
     config.storage = :fog
     config.fog_credentials = {

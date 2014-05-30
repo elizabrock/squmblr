@@ -37,5 +37,4 @@ group :test do
   gem 'shoulda'
   gem 'vcr'
   gem 'webmock'
-  gem 'shoulda-matchers'
 end

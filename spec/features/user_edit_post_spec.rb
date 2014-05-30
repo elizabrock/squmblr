@@ -13,7 +13,7 @@ feature "Edit posts" do
     page.should have_content "Drafts"
     click_link "edit squmbl"
     fill_in "Content", with: "This draft rocks"
-    click_button "publish squmbl"
+    click_button "create squmbl"
     page.should have_content "Your squmbl"
   end
 end

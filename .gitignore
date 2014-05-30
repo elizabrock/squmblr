@@ -17,3 +17,6 @@
 
 # Ignore secrets and keys
 /config/application.yml
+
+# Ignore public uploads
+/public/uploads/

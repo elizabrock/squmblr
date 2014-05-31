@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140529155740) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "users", force: true do |t|

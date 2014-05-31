@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 feature "User visits profile page" do
-  let!(:bob) {Fabricate(:user, email: "bob@example.com", username: "bob")}
-  let!(:matt) {Fabricate(:user, email: "mknicos@gmail.com", username: "matt")}
+  let!(:bob) {Fabricate(:user, email: "bob@example.com", username: "bob", password: "password")}
+  let!(:matt) {Fabricate(:user, email: "mknicos@gmail.com", username: "matt", password: "password")}
+
   scenario "User visits own profile page" do
     login_as matt
     visit user_path(matt)

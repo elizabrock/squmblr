@@ -22,8 +22,7 @@ feature "User signs up" do
   end
 
   scenario "signing in with username, rather than email" do
-    # PR 5: username signin
-    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    Fabricate(:user, username: "joe")
     visit '/'
     click_link 'Sign in'
     fill_in 'Email/Username', with: 'joe'
@@ -34,8 +33,7 @@ feature "User signs up" do
   end
 
   scenario "failed login" do
-    # PR 5: username signin
-    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    Fabricate(:user, username: "joe")
     visit '/'
     click_link 'Sign in'
     fill_in 'Email/Username', with: 'joeieieie'
@@ -60,6 +58,32 @@ feature "User signs up" do
     page.should have_error("has already been taken", on: "Email")
     page.should have_error("doesn't match Password", on: "Password confirmation")
     page.should have_error("has already been taken", on: "Username")
+  end
+
+  scenario "failed signup because invalid characters in username" do
+    visit '/'
+    click_link "I'm Ready!"
+    fill_in "Email", with: "joe@example.com"
+    fill_in "Username", with: "joe@example"
+    fill_in "Password", with: "mypassword"
+    fill_in "Password confirmation", with: "mypassword"
+    click_button "Sign up"
+    page.should_not have_content "Welcome to Squmblr"
+    page.should have_content "Your account could not be created."
+    page.should have_error("username can only contain letters", on: "Username")
+  end
+
+  scenario "failed signup because invalid characters in username" do
+    visit '/'
+    click_link "I'm Ready!"
+    fill_in "Email", with: "joe@example.com"
+    fill_in "Username", with: "joe joe"
+    fill_in "Password", with: "mypassword"
+    fill_in "Password confirmation", with: "mypassword"
+    click_button "Sign up"
+    page.should_not have_content "Welcome to Squmblr"
+    page.should have_content "Your account could not be created."
+    page.should have_error("username can only contain letters", on: "Username")
   end
 
   scenario "user fills in wrong captcha" do

@@ -80,25 +80,27 @@ Maybe?
   * Spamming / Invitations
 
 
-## Project Documentation
+## Project Setup
 
-* Ruby version
-
-* System dependencies
-
+* Ruby Version: 2.1.1
+* System Dependencies: phantomjs, imagemagick
 * Configuration
+    1. *Copy* config/database.yml.example to config/database.yml
+    2. Change any database settings in config/database.yml (*NOT* the example file) that are necessary for your machine.
 
 * Database creation
-
+    1. `rake db:create:all`
+    2. `rake db:migrate`
 * Database initialization
-
+    1. `rake db:seed`
 * How to run the test suite
-
+    1. `rake`
 * Services (job queues, cache servers, search engines, etc.)
-
+    * N/A
 * Deployment instructions
-
-* ...
+    * `heroku create <application_name>`
+    * `git push heroku master`
+    * `heroku run rake db:migrate`
 
 ## Setup Instructions
 

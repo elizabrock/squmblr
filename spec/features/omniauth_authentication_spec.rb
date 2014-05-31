@@ -13,7 +13,7 @@ feature "User authentication via Github" do
     page.should_not have_content "Sign out"
     page.should have_content "Sign in"
 
-    user = User.find_by_username("JoeSmith")
+    user = User.last
     user.email.should == "joesmith@example.com"
     user.uid.should == "12345"
     user.username.should == "JoeSmith"
@@ -39,7 +39,8 @@ feature "User authentication via Github" do
     visit '/'
     click_link "I'm Ready!"
     click_link "Sign in with Github"
-    user = User.find_by_username("JoeSmith")
+
+    user = User.last
     user.email.should == "joesmith@example.com"
     user.uid.should == "12345"
     user.username.should == "JoeSmith"
@@ -48,7 +49,8 @@ feature "User authentication via Github" do
     sign_into_github_as("joe", token: "8675309")
     click_link "I'm Ready!"
     click_link "Sign in with Github"
-    user = User.find_by_username("JoeSmith")
+
+    user = User.last
     user.email.should == "joesmith@example.com"
     user.uid.should == "12345"
     user.username.should == "JoeSmith"

@@ -22,8 +22,7 @@ feature "User signs up" do
   end
 
   scenario "signing in with username, rather than email" do
-    # PR 5: username signin
-    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    Fabricate(:user, username: "joe")
     visit '/'
     click_link 'Sign in'
     fill_in 'Email/Username', with: 'joe'
@@ -34,8 +33,7 @@ feature "User signs up" do
   end
 
   scenario "failed login" do
-    # PR 5: username signin
-    User.create(email: "joe@example.com", username: "joe", password: "password", password_confirmation: "password")
+    Fabricate(:user, username: "joe")
     visit '/'
     click_link 'Sign in'
     fill_in 'Email/Username', with: 'joeieieie'

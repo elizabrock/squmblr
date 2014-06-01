@@ -4,4 +4,16 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :content
   validates_presence_of :user
+
+  def rating_count(opinion)
+    if opinion == 'negative'
+      ratings.where(opinion: -1).count(:opinion)
+    elsif opinion == 'neutral'
+      ratings.where(opinion: 0).count(:opinion)
+    elsif opinion == 'positive'
+      ratings.where(opinion: 1).count(:opinion)
+    elsif opinion == 'all'
+      ratings.count(:opinion)
+    end
+  end
 end

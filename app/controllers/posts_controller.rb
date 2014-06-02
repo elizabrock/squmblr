@@ -13,8 +13,8 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    published = params[:post][:published]
     if @post.save
-      published = params[:post][:published]
       flash[:notice] = published ? "Your squmbl has been created!" : "Your squmbl has been saved as a draft!"
       if published
         redirect_to posts_path
@@ -22,19 +22,23 @@ class PostsController < ApplicationController
         redirect_to user_path(current_user)
       end
     else
-      flash[:alert] = params[:post][:published] ? "Your squmbl could not be created." : "Your squmbl could not be saved."
+      flash[:alert] = published ? "Your squmbl could not be created." : "Your squmbl could not be saved."
       render :new
     end
   end
 
   def update
     @post = Post.find_by_id(params[:id])
-    #@post.content = params[:post][:content]
-    if @post.update(content: params[:post][:content])
-      flash[:notice] = "Your squmbl has been saved."
-      redirect_to posts_path
+    published = params[:post][:published]
+    if @post.update(content: params[:post][:content], published: params[:post][:published])
+      flash[:notice] = published ? "Your squmbl has been created!" : "Your squmbl has been saved as a draft!"
+      if published
+        redirect_to posts_path
+      else
+        redirect_to user_path(current_user)
+      end
     else
-      flash[:alert] = "Your squmbl could not be saved."
+      flash[:alert] = published ? "Your squmbl could not be created." : "Your squmbl could not be saved."
       redirect_to posts_path
     end
   end

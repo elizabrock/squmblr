@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1 Hello there, #{@user.email}!
+    %p
+      The Squmblr password for #{@user.username} has been changed.
+      %br/
+    %p
+      To login to the site, just follow this link: #{@url}.
+    %p Thanks for squmbling, and have a great day!

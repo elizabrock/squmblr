@@ -6,6 +6,6 @@
       squmbd:
       = post.content
       = post.created_at
-      = render partial: "social_buttons/index_buttons", :locals => { :post_id => post.id }
+      = render partial: "shared/index_buttons", :locals => { :post => post }
 - if user_signed_in?
   = link_to 'new squmbl', new_post_path

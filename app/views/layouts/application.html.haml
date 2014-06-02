@@ -16,7 +16,7 @@
         %li= link_to "squmbls", posts_path
         - if user_signed_in?
           %li= link_to "write a squmbl", new_post_path
-      = render partial: "social_buttons/layout_buttons"
+      = render partial: "shared/layout_buttons"
 
     .alert= alert
     .notice= notice

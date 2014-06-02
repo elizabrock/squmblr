@@ -8,6 +8,7 @@ feature "User visits profile page" do
     login_as matt
     visit user_path(matt)
     page.should have_content "mknicos@gmail.com"
+    page.should have_content "You are the current user"
   end
 
   scenario "User visits someone elses profile page" do
@@ -15,11 +16,14 @@ feature "User visits profile page" do
     visit user_path(bob)
     page.should have_content "bob@example.com"
     page.should_not have_content "mknicos@gmail.com"
+    page.should have_content "Follow this user"
   end
 
   scenario "user not logged in" do
     visit user_path(bob)
     page.should have_content "bob@example.com"
     page.should_not have_content "mknicos@gmail.com"
+    page.should_not have_content "You are the current user"
+    page.should_not have_content "Follow this user"
   end
 end

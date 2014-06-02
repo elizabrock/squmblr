@@ -18,6 +18,8 @@
           %li= link_to "write a squmbl", new_post_path
           %li= link_to "edit profile", edit_user_registration_path
           %li= link_to "profile", user_path(current_user)
+      = render partial: "shared/layout_buttons"
+
     .alert= alert
     .notice= notice
     = yield

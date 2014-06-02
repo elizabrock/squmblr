@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   before_action :update_published_param, on: [:create, :update]
 
   def index
     @posts = Post.published.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -25,6 +29,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def update
     @post = Post.find_by_id(params[:id])
     if @post.update(content: params[:post][:content], published: params[:post][:published])
@@ -39,9 +47,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  private
 
   def update_published_param
     return unless params[:post]
@@ -49,7 +55,6 @@ class PostsController < ApplicationController
     params[:post][:published] = is_published ? true : false
   end
 
-  private
 
   def post_params
     params.require(:post).permit(:content, :image, :published)

@@ -1,0 +1,6 @@
+%h1 squmblr
+%h2 It's like reddit, imgur and tumblr had a big beautiful baby.
+
+- unless user_signed_in?
+  /fixes document.write() error due to async callback
+  = link_to "I'm Ready!", new_user_registration_path, "data-no-turbolink" => true, class: "btn btn-primary btn-med"

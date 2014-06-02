@@ -1,0 +1,156 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="1099" measuredH="669" mockupW="1088" mockupH="625">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="118" y="44" w="768" h="625" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>15658734</color>
+        <text>squmblr%20home%0Ahttp%3A//squmblr.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="133" y="131" w="-1" h="-1" measuredW="146" measuredH="43" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>squmblr</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::SubTitle" x="376" y="635" w="-1" h="-1" measuredW="182" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Squmble%20with%20us.</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::HRule" x="118" y="617" w="768" h="-1" measuredW="100" measuredH="10" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Canvas" x="204" y="174" w="614" h="447" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::VCurly" x="902" y="227" w="-1" h="-1" measuredW="180" measuredH="140" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Profile%20images%20will%20come%20from%20gravatar</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::LinkBar" x="629" y="127" w="-1" h="-1" measuredW="186" measuredH="19" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>JimBob%2C%20Settings%2C%20Sign%20Out</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Webcam" x="702" y="190" w="84" h="85" measuredW="177" measuredH="146" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::SubTitle" x="705" y="284" w="-1" h="-1" measuredW="81" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>JimBob</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Arrow" x="941" y="146" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rightArrow>false</rightArrow>
+        <text>Initial%20visit%20to%20page%20will%20guide%20the%20user%20through%20a%20tour%20%28using%20Joyride%3F%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="694" y="330" w="-1" h="-1" measuredW="100" measuredH="10" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Paragraph" x="694" y="351" w="116" h="266" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%5BEdit%20my%20Profile%5D%0A%20%0A%5BFind%20my%20Friends%5D%0A%20%0A%5BRecommended%20Squms%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::FieldSet" x="230" y="190" w="414" h="100" measuredW="200" measuredH="170" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Post</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::IconLabel" x="253" y="212" w="-1" h="-1" measuredW="76" measuredH="63" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Funny%20Image</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::IconLabel" x="344" y="212" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Meme</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::IconLabel" x="407" y="212" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>GIF</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::IconLabel" x="470" y="212" w="-1" h="-1" measuredW="68" measuredH="63" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Screenshot</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::IconLabel" x="553" y="209" w="-1" h="-1" measuredW="48" measuredH="63" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Video</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::CallOut" x="214" y="190" w="-1" h="-1" measuredW="39" measuredH="39" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::CallOut" x="779" y="416" w="-1" h="-1" measuredW="39" measuredH="39" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::CallOut" x="788" y="367" w="-1" h="-1" measuredW="39" measuredH="39" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::FieldSet" x="230" y="306" w="414" h="311" measuredW="200" measuredH="170" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Squmblr%20Timeline</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Canvas" x="245" y="330" w="384" h="192" measuredW="100" measuredH="70" zOrder="22" locked="false" isInGroup="-1"/>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Webcam" x="253" y="336" w="59" h="55" measuredW="177" measuredH="146" zOrder="23" locked="false" isInGroup="-1"/>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Paragraph" x="317" y="336" w="300" h="55" measuredW="200" measuredH="80" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>*Team%20Squmblr*%3A%20Look%20at%20this%20crazy%20cat%20video%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::VideoPlayer" x="392" y="370" w="154" h="112" measuredW="300" measuredH="200" zOrder="25" locked="false" isInGroup="-1"/>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Icon" x="253" y="445" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>HandClosedIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Icon" x="344" y="445" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>HandPointIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Link" x="304" y="452" w="-1" h="-1" measuredW="25" measuredH="19" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>meh</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::VCurly" x="11" y="327" w="107" h="163" measuredW="180" measuredH="140" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>right</direction>
+        <text>Voting%20is%20%22Fuck%20Yeah%21%22%2C%20%22meh%22%2C%20or%20%22Fuck%20That%21%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::HRule" x="245" y="491" w="384" h="-1" measuredW="100" measuredH="10" zOrder="30" locked="false" isInGroup="-1"/>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::VRule" x="422" y="499" w="-1" h="23" measuredW="10" measuredH="100" zOrder="31" locked="false" isInGroup="-1"/>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Link" x="306" y="501" w="-1" h="-1" measuredW="47" measuredH="19" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Discuss</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::IconLabel" x="481" y="500" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RedoIcon%7Cxsmall</icon>
+        <labelPosition>right</labelPosition>
+        <text>%5BReblog%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::IconLabel" x="563" y="474" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ShareIcon%7Cxsmall</icon>
+        <labelPosition>right</labelPosition>
+        <text>%5BShare%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::VCurly" x="919" y="391" w="-1" h="-1" measuredW="180" measuredH="140" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>User%20will%20immediately%20follow%20%22Team%20Squmblr%22%20by%20default</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

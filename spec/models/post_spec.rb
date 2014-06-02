@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'carrierwave/test/matchers'
 
 describe Post do
   it { should belong_to :user }

@@ -17,6 +17,8 @@
         - if user_signed_in?
           %li= link_to "write a squmbl", new_post_path
           %li= link_to "memes", new_meme_path
+          %li= link_to "edit profile", edit_user_registration_path
+
     .alert= alert
     .notice= notice
     = yield

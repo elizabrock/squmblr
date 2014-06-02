@@ -3,4 +3,6 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :content
   validates_presence_of :user
+
+  scope :published, -> { where(published: true) }
 end

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :update_published_param, on: [:create, :update]
 
   def index
-    @posts = Post.all
+    @posts = Post.published.all
   end
 
   def new

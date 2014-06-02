@@ -2,10 +2,9 @@
 %ul.post
   - @posts.each do |post|
     .post
-    - unless post.published == false
-      = post.user.username
-      squmbd:
-      = post.content
-      = post.created_at
+    = post.user.username
+    squmbd:
+    = post.content
+    = post.created_at
 - if user_signed_in?
   = link_to 'new squmbl', new_post_path

@@ -43,6 +43,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -63,6 +68,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
+    excon (0.33.0)
     execjs (2.0.2)
     fabrication (2.11.2)
     faraday (0.9.0)
@@ -70,6 +76,24 @@ GEM
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    fog (1.22.0)
+      fog-brightbox
+      fog-core (~> 1.21, >= 1.21.1)
+      fog-json
+      nokogiri (~> 1.5, >= 1.5.11)
+    fog-brightbox (0.0.2)
+      fog-core
+      fog-json
+    fog-core (1.22.0)
+      builder
+      excon (~> 0.33)
+      formatador (~> 0.2)
+      mime-types
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+    fog-json (1.0.0)
+      multi_json (~> 1.0)
+    formatador (0.2.5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -96,11 +120,16 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
     mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.9.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     oauth2 (0.9.4)
@@ -189,6 +218,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    subexec (0.2.3)
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
@@ -217,16 +247,19 @@ PLATFORMS
 DEPENDENCIES
   acts_as_commentable_with_threading
   capybara
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   email_spec
   fabrication
   figaro
+  fog
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   letter_opener
+  mini_magick
   omniauth
   omniauth-github
   pg

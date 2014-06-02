@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140530153046) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "posts", ["ancestry"], name: "index_posts_on_ancestry", using: :btree

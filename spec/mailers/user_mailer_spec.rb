@@ -6,7 +6,7 @@ describe "Welcome email" do
   include EmailSpec::Matchers
 
   before do
-    @user = User.create(email: "welcome_email_test@example.com", username: "welcome_email_test", password:"12345678", password_confirmation:"12345678")
+    @user = Fabricate(:user)
     @mail = UserMailer.welcome_email(@user)
   end
 

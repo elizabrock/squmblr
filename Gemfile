@@ -2,12 +2,15 @@ ruby '2.1.1'
 #ruby-gemset=squmblr
 source 'https://rubygems.org'
 
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'figaro'
+gem 'fog'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem "mini_magick"
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'

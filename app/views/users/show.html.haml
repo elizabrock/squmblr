@@ -5,11 +5,10 @@
 
 - if user_signed_in?
   Drafts
-  - @user.posts.each do |post|
+  - @user.posts.drafts.all.each do |post|
     .draft
-    - if post.published == false
-      = post.user.username
-      squmbd:
-      = post.content
-      = post.created_at
-      = link_to "edit squmbl", edit_post_path(post.id)
+    = post.user.username
+    squmbd:
+    = post.content
+    = post.created_at
+    = link_to "edit squmbl", edit_post_path(post.id)

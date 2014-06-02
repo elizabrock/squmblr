@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }
   resources :users, only: :show
   resources :posts, except: [:show, :edit, :update, :destroy]
   resources :follows, only: :create
   root to: "home#index"
 
-  devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }
 
-  resources :posts, except: [:show, :edit, :update, :destroy]
-  resources :users, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

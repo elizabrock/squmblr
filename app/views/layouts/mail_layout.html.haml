@@ -21,19 +21,22 @@
         margin: 1em auto;
       }
       #wrapper {
-        padding: 2em;
-        margin: 1em auto;
+        padding: 0px 0px 0px 0px;
+        margin: 40px auto;
         width: 80%;
         background-color: rgba(0, 0, 0, .1);
         border-radius: 2em;
       }
       #wrapper h1 {
-          position: relative;
-          bottom: 2em;
+        text-align: center;
+        padding: 20px 0px 0px 0px;
       }
       #wrapper p {
-          position: relative;
-          bottom: 4em;
+        max-width: 500px;
+        text-align: center;
+        margin: auto;
+        padding: 0px 0px 40px 0px;
+        font-size: 22px;
       }
       #footer {
         text-align: center;
@@ -41,7 +44,6 @@
         width: 80%;
         color: white;
         text-shadow: 1px 1px 1px #000;
-        display: inline-block;
       }
       #footer h1 {
         display: inline;
@@ -56,18 +58,18 @@
         background: url(http://evernode.delacqua.us/img/johngmailcom/john/8782395-1cxoz.1);
         background-size: cover;
         position: relative;
-        top: 110px;
-        left: 720px;
+        display: inline-flex;
+        top: -40px;
       }
       #squirrel a {
         padding: 0px 0px 60px 70px;
       }
   %body
     #wrapper
-      #squirrel
-        = link_to "", "https://www.youtube.com/watch?v=4ikH9ZRcF2Q&feature=kp", :target => "_blank"
 
       = yield
     #footer
+      #squirrel
+        = link_to "", "https://www.youtube.com/watch?v=4ikH9ZRcF2Q&feature=kp", :target => "_blank"
       %h1 Squmblr
       %p It's like reddit, imgur and tumblr had a big beautiful baby.

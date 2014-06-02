@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       end
     else
       flash[:alert] = published ? "Your squmbl could not be created." : "Your squmbl could not be saved."
-      redirect_to posts_path
+      render :new
     end
   end
 

@@ -6,10 +6,10 @@ feature "User views posts" do
     joe = Fabricate(:user, username: "joe")
     jill = Fabricate(:user, username: "jill")
 
-    Fabricate(:post, content: "I'm a teapot", published: true, user: joe)
-    Fabricate(:post, content: "This is a draft", published: false, user: joe)
-    Fabricate(:post, content: "Meme", published: true, user: jill)
-    Fabricate(:post, content: "Gandalf", published: true, user: jill)
+    Fabricate(:published_post, content: "I'm a teapot", user: joe)
+    Fabricate(:draft_post, content: "This is a draft", user: joe)
+    Fabricate(:published_post, content: "Meme", user: jill)
+    Fabricate(:published_post, content: "Gandalf", user: jill)
 
     visit root_path
     click_link "squmbls"

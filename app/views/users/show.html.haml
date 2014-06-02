@@ -3,7 +3,7 @@
 %h3= @user.username
 %h4= @user.email
 
-- if user_signed_in? && current_user.id == @user.id
+- if current_user == @user
   Drafts
   - @user.posts.drafts.all.each do |post|
     .draft

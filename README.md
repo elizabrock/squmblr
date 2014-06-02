@@ -7,28 +7,33 @@ Meme Blogging / Nerd Tumblr
 First PR Features:
 =========
  1. Captcha [Steven + Sam]
- 2. Welcome emails [Jeremy + Max + Mitch]
- 3. Oauth w/ Github [Nat + Adam]
- 4. Password Reset (incl. emails) [Robert + Peder]
- 5. Username signin [Drew + Randy]
- 6. Account edit [Giovanni + James]
- 7. Gravatar / User profile page [Matt + Matt]
+ 2. ✓ Welcome emails [Jeremy + Max + Mitch]
+ 3. ✓ Oauth w/ Github [Nat + Adam]
+ 4. ✓ Password Reset (incl. emails) [Robert + Peder]
+ 5. ✓ Username signin [Drew + Randy]
+ 6. ✓ Account edit [Giovanni + James]
+ 7. ✓ Gravatar / User profile page [Matt + Matt]
  8. Start stylin' [Sam W. + Spencer]
- 9. Post index page [Aimee + Tyler]
+ 9. ✓ Post index page [Aimee + Tyler]
 
+✓
 
 Second PR Features:
 ==========
- 1. Image uploads with carrierwave [Tyler + Aimee]
+ 1. ✓ Image uploads with carrierwave [Tyler + Aimee]
  2. Individual squmblogs (w/ following) [Max + Mitch + Jeremy]
- 3. Up/Down/Meh voting!! (w/ rjs and poltergeist) [Peder + Robert]
- 4. Social Sharing + pretty urls on user pages [Matt + Matt]
+ 3. x Up/Down/Meh voting!! (w/ rjs and poltergeist) [Peder + Robert]
+ 4. ✓ Social Sharing + pretty urls on user pages [Matt + Matt]
  5. Mailer Layouts / Pretty Emails (take a look at mailview gem) [James + Giovanni]
- 6. Meme APIs!! [Randy + Drew]
+ 6. x Meme APIs!! [Randy + Drew]
  7. Comments [Spencer + Sam W.]
  8. Draft Posts (w/ ability to edit before publishing) [Nat + Adam]
  9. Admin Panel (active\_admin, selectively enable features) [Sam T. + Steven]
 
+Matt
+Matt
+Tyler
+Aimee
 
 Third PR Features:
 ==================

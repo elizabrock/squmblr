@@ -7,6 +7,7 @@ feature "User views posts" do
     jill = Fabricate(:user, username: "jill")
 
     Fabricate(:post, content: "I'm a teapot", published: true, user: joe)
+    Fabricate(:post, content: "This is a draft", published: false, user: joe)
     Fabricate(:post, content: "Meme", published: true, user: jill)
     Fabricate(:post, content: "Gandalf", published: true, user: jill)
 
@@ -16,5 +17,6 @@ feature "User views posts" do
     page.should have_content("joe squmbd: I'm a teapot")
     page.should have_content("jill squmbd: Meme")
     page.should have_content("jill squmbd: Gandalf")
+    page.should_not have_content("joe squmbd: This is a draft")
   end
 end

@@ -1,0 +1,5 @@
+= simple_form_for(@post) do |f|
+  = f.input :content, :as => :text
+  = f.input :image, :as => :file
+  = f.button :submit, "create squmbl"
+  = f.button :submit, "save as draft"

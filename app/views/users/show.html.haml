@@ -2,3 +2,13 @@
 = image_tag @user.gravatar_url
 %h3= @user.username
 %h4= @user.email
+
+- if current_user == @user
+  Drafts
+  - @user.posts.drafts.all.each do |post|
+    .draft
+    = post.user.username
+    squmbd:
+    = post.content
+    = post.created_at
+    = link_to "edit squmbl", edit_post_path(post.id)

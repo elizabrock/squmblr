@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "User views posts" do
 
-  scenario "views a index page of posts" do
+  scenario "views an index page of posts" do
     joe = Fabricate(:user, username: "joe")
     jill = Fabricate(:user, username: "jill")
 

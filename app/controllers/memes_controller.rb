@@ -30,7 +30,7 @@ class MemesController < ApplicationController
     image = params[:meme][:image].path
     get_meme(image)
     if @meme.save
-      redirect_to memes_path, notice: "Your meme has been created"
+      redirect_to memes_path, notice: "Your memeble has been created"
     else
       render "new"
     end
@@ -60,8 +60,6 @@ class MemesController < ApplicationController
   end
 
   def upload_image(image)
-
-
     # Corresponds with API from:
     # https://www.mashape.com/ronreiter/meme-generator#!endpoint-Get-images
 

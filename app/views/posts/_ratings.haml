@@ -1,0 +1,39 @@
+- @rating = Rating.where(:user_id => current_user, :post_id => post).first
+- if @rating.nil?
+  .positive
+    = form_for Rating.new(post: post, opinion: 1), url: ratings_path do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion
+      = f.submit 'Positive'
+    = post.rating_count('positive')
+  .neutral
+    = form_for Rating.new(post: post, opinion: 0), url: ratings_path do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion
+      = f.submit 'Neutral'
+    = post.rating_count('neutral')
+  .negative
+    = form_for Rating.new(post: post, opinion: -1), url: ratings_path do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion
+      = f.submit 'Negative'
+    = post.rating_count('negative')
+- else
+  .positive
+    = form_for @rating, url: rating_path(@rating) do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion, :value => 1
+      = f.submit 'Positive'
+    = post.rating_count('positive')
+  .neutral
+    = form_for @rating, url: rating_path(@rating) do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion, :value => 0
+      = f.submit 'Neutral'
+    = post.rating_count('neutral')
+  .negative
+    = form_for @rating, url: rating_path(@rating) do |f|
+      = f.hidden_field :post_id
+      = f.hidden_field :opinion, :value => -1
+      = f.submit 'Negative'
+    = post.rating_count('negative')

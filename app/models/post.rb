@@ -7,11 +7,11 @@ class Post < ActiveRecord::Base
 
   def rating_count(opinion)
     if opinion == 'negative'
-      ratings.where(opinion: -1).count(:opinion)
+      ratings.where(opinion: -1).count
     elsif opinion == 'neutral'
-      ratings.where(opinion: 0).count(:opinion)
+      ratings.where(opinion: 0).count
     elsif opinion == 'positive'
-      ratings.where(opinion: 1).count(:opinion)
+      ratings.where(opinion: 1).count
     elsif opinion == 'all'
       ratings.count(:opinion)
     end

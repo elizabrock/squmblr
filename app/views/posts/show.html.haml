@@ -1,0 +1,20 @@
+%h4 Squmble:
+=@post.content
+%p
+
+%h4 Comments:
+#comment_show
+  - @post.comments.each do |c|
+    %strong
+      Posted #{time_ago_in_words(c.created_at)} ago
+      %p
+    = h(c.comment)
+    %p
+=link_to "<<Back", posts_path
+=link_to "Edit", edit_post_path(@post)
+= simple_form_for(Comment.new, url: post_comments_path(@post)) do |f| 
+  = f.input :comment, as: :text
+  = f.hidden_field :user_id, :value => current_user.id
+  %p
+  = f.button :submit, "Comment"
+  %p

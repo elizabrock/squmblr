@@ -1,21 +1,5 @@
-%h1 create your memes here
--# %input{:type=>"text", :required => true, placeholder => 'name of picture'}
-  = widget_box title: 'Text inputs', icon: 'align-justify', class: 'nopadding' do
-%form.form-horizontal{action: '#', method: 'get'}
-  .form-inputs
-    .control-group
-      %label.control-label File upload input
-      .controls
-        %input{type: 'file'}/
-      %label.control-label Top text
-      .controls
-        %input{placeholder: 'Top text', type: 'text'}
-      %label.control-label Bottom text
-      .controls
-        %input{placeholder: 'Bottom text', type: 'text'}
-
-
-  .form-actions
-    %button.btn.btn-primary{type: 'submit'} Save
-
-  
+= simple_form_for(@meme) do |f|
+  = f.input :image, :as => :file
+  = f.input :top_text, :as => :text
+  = f.input :bottom_text, :as => :text
+  = f.button :submit, "create memeble"

@@ -14,7 +14,18 @@ class MemesController < ApplicationController
   def create
     @meme = current_user.memes.build(meme_params)
     image = params[:meme][:image].path
-    get_meme(image)
+    #image_name = image.split("/tmp/")[1]
+    uploaded_io = params[:meme][:image]
+    image_name = uploaded_io.original_filename
+    File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+
+    Rails.logger.debug "\n THIS IS THE PARAMETERS: #{params} \n"
+    Rails.logger.debug "\n THIS IS THE IMAGE NAME: #{image_name} \n"
+
+    upload_image(image)
+    get_meme(image_name)
     if @meme.save
       redirect_to memes_path, notice: "Your meme has been created"
     else
@@ -22,21 +33,22 @@ class MemesController < ApplicationController
     end
   end
 
-  def get_meme(image)
-
-    Rails.logger.debug "\n THE MEME IS: #{@meme.inspect}\n THE IMAGE IS: #{image}\n"
-
-    upload_image(image)
-
-    Rails.logger.debug "\n BACK TO GET_MEME \n"
+  def get_meme(image_name)
 
     top_text = @meme.top_text
     bottom_text = @meme.bottom_text
+    #
+    #base_image_title = 'Condescending%20Wonka'
+    #
+    path = 'https://ronreiter-meme-generator.p.mashape.com/meme?meme=' + image_name + '&top=' + top_text + '&bottom=' + bottom_text + '&font=Impact&font_size=50'
 
-    base_image_title = 'Condescending%20Wonka'
-    path = 'https://ronreiter-meme-generator.p.mashape.com/meme?meme=' + base_image_title + '&top=' + top_text + '&bottom=' + bottom_text + '&font=Impact&font_size=50'
+
+    Rails.logger.debug "\n GET MEME PATH IS: #{path}\n"
+
+
     image_directory = 'app/assets/images/'
     image_file = 'doesitwork.jpg'
+
     image_path = image_directory + image_file
     response = Unirest::get path,
       headers: {
@@ -44,10 +56,14 @@ class MemesController < ApplicationController
         'Accept' => 'application/json'
       }
       IO.write(image_path, response.body.force_encoding("UTF-8"))
+
+      Rails.logger.debug "\n GET MEME RESPONSE: #{response.inspect}\n"
+
   end
 
   def upload_image(image)
 
+    #image = "app/assets/images/stratocaster3.jpg"
 
     # Corresponds with API from:
     # https://www.mashape.com/ronreiter/meme-generator#!endpoint-Get-images
@@ -62,7 +78,8 @@ class MemesController < ApplicationController
         "image" => File.new(image, 'rb')
       }
 
-    Rails.logger.debug "\n UPLOAD IMAGE RESPONSE: #{response.inspect} \n"
+
+    Rails.logger.debug "\n UPLOAD IMAGE, RESPONSE IS: #{response.inspect} \n"
 
   end
 

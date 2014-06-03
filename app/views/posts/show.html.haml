@@ -3,13 +3,9 @@
 %p
 
 %h4 Comments:
-#comment_show
-  - @post.comments.each do |c|
-    %strong
-      Posted #{time_ago_in_words(c.created_at)} ago by #{c.user.username}
-      %p
-    = h(c.comment)
-    %p
+%ul#comment_show
+  = render @post.comments
+
 =link_to "<<Back", posts_path
 %p
 = simple_form_for(Comment.new, url: post_comments_path(@post)) do |f| 

@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :posts, except: [:edit, :update, :destroy]
   resources :users, only: :show
-  resources :comments
   resources :posts  do
     resources :comments
   end

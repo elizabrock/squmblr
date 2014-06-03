@@ -1,10 +1,5 @@
 class CommentsController < ApplicationController
   skip_before_action :authenticate_user!
-
-  def index
-  	@comments = Comment.all
-  end
-
   def new
   	@comment = Comment.new
   end
@@ -20,10 +15,6 @@ class CommentsController < ApplicationController
       flash[:alert] = "Your comment could not be created"
       redirect_to post_path (@post)
     end
-  end
-
-  def show
-  	@comment = Comment.find(params[:id])
   end
 
   private 

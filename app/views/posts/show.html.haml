@@ -6,12 +6,12 @@
 #comment_show
   - @post.comments.each do |c|
     %strong
-      Posted #{time_ago_in_words(c.created_at)} ago
+      Posted #{time_ago_in_words(c.created_at)} ago by #{c.user.username}
       %p
     = h(c.comment)
     %p
 =link_to "<<Back", posts_path
-=link_to "Edit", edit_post_path(@post)
+%p
 = simple_form_for(Comment.new, url: post_comments_path(@post)) do |f| 
   = f.input :comment, as: :text
   = f.hidden_field :user_id, :value => current_user.id

@@ -9,9 +9,11 @@ feature "New comments" do
     click_button "create squmbl"
     click_link "view"
     fill_in "Comment", with: "Text input comment body for test"
+    click_button "Comment"
     current_path.should == post_path(Post.last)
     page.should have_content "Text input with body for test!"
     page.should have_content "Text input comment body for test"
+    page.should have_content "ruby"
   end
 
   scenario "user displays in comment" do
@@ -21,6 +23,7 @@ feature "New comments" do
     click_button "create squmbl"
     click_link "view"
     fill_in "Comment", with: "Text input comment body for test"
+    click_button "Comment"
     current_path.should == post_path(Post.last)
     page.should have_content "Text input comment body for test"
     page.should have_content :user
@@ -33,6 +36,7 @@ feature "New comments" do
     click_button "create squmbl"
     click_link "view"
     fill_in "Comment", with: ""
+    click_button "Comment"
     current_path.should == post_path(Post.last)
     page.should have_content "Text input with body for test!"
   end

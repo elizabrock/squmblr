@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @comments = @post.comments
   end
 
   def new
@@ -22,6 +23,10 @@ class PostsController < ApplicationController
       flash[:alert] = "Your squmbl could not be created"
       render :new
     end
+  end
+
+  def name
+    @user = User.find_by_id(id)
   end
 
   private

@@ -1,8 +1,8 @@
 %h1 All Memes
+
 %ul
   - @memes.each do |meme|
     %a{:href => meme_path(meme.id)}
       .meme
         = meme.top_text
         = meme.bottom_text
-    

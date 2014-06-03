@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }
-  resources :users, only: :show
+  resources :users, only: :show do
+    resources :follows, only: :create
+  end
   resources :posts, except: [:show, :edit, :update, :destroy]
-  resources :follows, only: :create
   root to: "home#index"
 
 

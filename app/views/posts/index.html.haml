@@ -8,7 +8,7 @@
       = post.created_at
 - if user_signed_in?
   = link_to 'new squmbl', new_post_path
-  - if @follows.length > 0
+  - unless @follows.empty?
     %h2 You are following these people:
     %ul.follow
       - @follows.each do |follow|
@@ -22,5 +22,3 @@
           squmbd:
           = follow_post.content
           = follow_post.created_at
-
-

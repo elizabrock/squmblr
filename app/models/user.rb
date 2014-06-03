@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:github]
 
   has_many :posts
+  has_many :comments
 
   validates :username, uniqueness: true
   validates_presence_of :email

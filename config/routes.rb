@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  
+  get 'comments/index'
 
   root to: "home#index"
 
   devise_for :users, controllers: { omniauth_callbacks: :omniauth_callbacks }
 
-  resources :posts, except: [:show, :edit, :update, :destroy]
+  resources :posts, except: [:edit, :update, :destroy]
   resources :users, only: :show
+  resources :comments
+  resources :posts  do
+    resources :comments
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

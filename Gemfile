@@ -2,6 +2,7 @@ ruby '2.1.1'
 #ruby-gemset=squmblr
 source 'https://rubygems.org'
 
+gem 'acts_as_commentable'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'figaro'
@@ -17,6 +18,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'zurb-foundation'
+
 # gem 'unicorn'
 
 group :development do

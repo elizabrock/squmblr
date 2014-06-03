@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:github]
 
   has_many :posts
+  has_many :follows
+  has_many :followee_posts, through: :follows, source: :posts
   validates :username, uniqueness: true,
                        format: { with: /\A[a-zA-Z]+\z/, message: "username can only contain letters"}
   validates_presence_of :email

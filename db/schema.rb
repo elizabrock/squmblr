@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140602185446) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.boolean  "published"
   end
 
   create_table "users", force: true do |t|

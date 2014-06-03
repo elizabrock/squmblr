@@ -62,7 +62,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
-    excon (0.34.0)
+    excon (0.33.0)
     execjs (2.1.0)
     fabrication (2.11.2)
     faraday (0.9.0)
@@ -230,7 +230,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.2.1)
+    tzinfo (1.2.0)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
       execjs (>= 0.3.0)

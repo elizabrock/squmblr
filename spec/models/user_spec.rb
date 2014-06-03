@@ -27,4 +27,13 @@ describe User do
       end
     end
   end
+
+  describe 'username' do
+    it { should allow_value('matt').for(:username) }
+    it { should_not allow_value('as df jkl').for(:username) }
+    it { should_not allow_value('matt?').for(:username) }
+    it { should_not allow_value('matt=matt').for(:username) }
+    it { should_not allow_value('matt%').for(:username) }
+  end
+
 end

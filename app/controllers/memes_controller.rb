@@ -10,17 +10,6 @@ class MemesController < ApplicationController
     @meme = Meme.find(params[:id])
   end
 
-  def create
-    @meme = current_user.memes.build(meme_params)
-    if @meme.save
-      get_meme(meme)
-      redirect_to memes_path, notice: "Your memeble has been created!"
-    else
-      flash[:alert] =  "Your memeble could not be created."
-      render :new
-    end
-  end
-
   def new
     @meme = Meme.new
   end
@@ -28,7 +17,6 @@ class MemesController < ApplicationController
   def create
     @meme = current_user.memes.build(meme_params)
     image = params[:meme][:image].path
-    #image_name = image.split("/tmp/")[1]
     uploaded_io = params[:meme][:image]
     image_name = uploaded_io.original_filename
     File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|

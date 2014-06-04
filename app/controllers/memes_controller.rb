@@ -27,8 +27,8 @@ class MemesController < ApplicationController
     Rails.logger.debug "\n THIS IS THE IMAGE NAME: #{image_name} \n"
 
     upload_image(image, image_name)
-    get_meme(image_name)
     if @meme.save
+
       redirect_to memes_path, notice: "Your memeble has been created"
     else
       render "new"
@@ -36,28 +36,26 @@ class MemesController < ApplicationController
   end
 
   def get_meme(image_name)
+    # Rails.logger.debug "\n GET MEME PATH IS: #{path}\n"
+    top_text = @meme.top_text.gsub(" ", "%20")
+    bottom_text = @meme.bottom_text.gsub(" ", "%20")
+    image_name = image_name.gsub(" ", "%20")
+    image_name_url = image_name.split(".")[0]
+    Rails.logger.debug "\n This is image_name: #{image_name}\n"
 
-    top_text = @meme.top_text
-    bottom_text = @meme.bottom_text
-    #
-    # base_image_title = 'Condescending%20Wonka'
-    #
-    path = 'https://ronreiter-meme-generator.p.mashape.com/meme?meme=' + image_name + '&top=' + top_text + '&bottom=' + bottom_text + '&font=Impact&font_size=50'
-
-
-    Rails.logger.debug "\n GET MEME PATH IS: #{path}\n"
-    top_text = @meme.top_text
-    bottom_text = @meme.bottom_text
-    path = 'https://ronreiter-meme-generator.p.mashape.com/meme?meme=' + image_name + '&top=' + top_text + '&bottom=' + bottom_text + '&font=Impact&font_size=50'
-    image_directory = 'app/assets/images/'
-    image_file = 'doesitwork.jpg'
-
+    # path = "https://ronreiter-meme-generator.p.mashape.com/meme?meme=" + image_name + "&top=" + top_text + "&bottom=" + bottom_text + "&font=Impact&font_size=50"
+    image_directory = "app/assets/images/"
+    image_file = "doesitwork.jpg"
     image_path = image_directory + image_file
-    response = Unirest::get path,
-      headers: {
-        'X-Mashape-Authorization' => 'o352LiepNZdiE5TAykdDyZ1RmSyc0BlG',
-        'Accept' => 'application/json'
+      response = Unirest::get "https://ronreiter-meme-generator.p.mashape.com/meme?meme="+ image_name_url +"&top="+ top_text +"&bottom="+ bottom_text +"&font=Impact&font_size=50",
+        headers: {
+          "X-Mashape-Authorization" => "Kk0d6MhuSjmNjTNVMM4P1Yte1C8xsceu"
       }
+    # response = Unirest::get path,
+    #   headers: {
+    #     "X-Mashape-Authorization" => "o352LiepNZdiE5TAykdDyZ1RmSyc0BlG",
+    #     "Accept" => "application/json"
+    #   }
       IO.write(image_path, response.body.force_encoding("UTF-8"))
 
       # Rails.logger.debug "\n GET MEME RESPONSE: #{response.inspect}\n"
@@ -71,7 +69,7 @@ class MemesController < ApplicationController
     # Corresponds with API from:
     # https://www.mashape.com/ronreiter/meme-generator#!endpoint-Get-images
 
-    response = Unirest.post  "https://ronreiter-meme-generator.p.mashape.com/images",
+    response = Unirest.post "https://ronreiter-meme-generator.p.mashape.com/images",
       headers: {
         "X-Mashape-Authorization" => "o352LiepNZdiE5TAykdDyZ1RmSyc0BlG",
         "Accept" => "application/json"
@@ -79,6 +77,7 @@ class MemesController < ApplicationController
       parameters: {
         "image" => File.new("public/uploads/#{image_name}", 'rb')
       }
+      get_meme(image_name)
   end
 
   private

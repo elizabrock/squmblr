@@ -6,13 +6,19 @@ class RatingsController < ApplicationController
 
   def create
     current_user.ratings.create!(rating_params)
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to posts_path }
+      format.js
+    end
   end
 
   def update
     @rating = Rating.find(params[:rating][:post_id])
     @rating.update!(:opinion => params[:rating][:opinion])
-    redirect_to posts_path
+    respond_to do |format|
+      format.html { redirect_to posts_path }
+      format.js
+    end
   end
   private
 

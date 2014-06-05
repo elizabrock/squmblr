@@ -1,0 +1,2 @@
+$('.rating').contents().empty();
+$('.rating').append("<%= escape_javascript(render(:partial => 'posts/ratings', locals: {post: @rating.post})) %>");

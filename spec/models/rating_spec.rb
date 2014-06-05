@@ -65,16 +65,6 @@ describe Rating do
         rating.update(opinion: 1)
         rating.opinion.should == 1
       end
-      it 'should not allow post to be modified' do
-        pending
-        rating.update(post: lp2)
-        rating.post.should_not == lp2
-      end
-      it 'should not allow user to be modified' do
-        pending
-        rating.update(user: samus)
-        rating.user.should_not == samus
-      end
     end
   end
 

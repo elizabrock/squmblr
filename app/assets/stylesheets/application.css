@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+ul{
+  list-style-type: none;
+}
+.meme_thumb{
+  display: inline-block;
+
+}
+
+.meme_thumb img{
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+}
+
+#meme_box img{
+  margin-left: 15%;
+  width: 60%;
+  height: 60%;
+}

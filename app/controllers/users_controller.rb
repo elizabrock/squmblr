@@ -3,6 +3,5 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_username(params[:id])
-    @posts = Post.where(user: @user)
   end
 end

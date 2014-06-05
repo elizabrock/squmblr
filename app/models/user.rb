@@ -63,8 +63,4 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
-
-  def follow(user_to_follow)
-
-  end
 end

@@ -63,7 +63,7 @@ class MemesController < ApplicationController
     #     "Accept" => "application/json"
     #   }
       IO.write(image_path, response.body.force_encoding("UTF-8"))
-      @meme.meme_path = image_file
+      @meme.meme_path = "memes/" + image_file
       Rails.logger.debug "\n GET MEME PATH IS: #{@meme.meme_path}\n"
       @meme.save
 

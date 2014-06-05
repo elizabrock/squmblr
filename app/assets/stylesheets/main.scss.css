@@ -1,0 +1,77 @@
+@import "bootstrap";
+/*font-family: 'Julius Sans One', sans-serif;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Love Ya Like A Sister', cursive;
+font-family: 'Grand Hotel', cursive;
+font-family: 'Dawning of a New Day', cursive;
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'Sanchez', serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Rokkitt', serif;*/
+
+#header ul li a {
+  color: orange;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+body {
+  background: -webkit-linear-gradient(left, #00002F, #3656B1);
+  background: -o-linear-gradient(right, #00002F, #3656B1);
+  background: -moz-linear-gradient(right, #00002F, #3656B1);
+  background: linear-gradient(to right, #00002F, #3656B1);
+}
+
+.addthis_toolbox {
+  margin-top: 4px;
+}
+
+.navbar {
+  min-height: 0px !important;
+  margin-top: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+#html {
+  height: 100% !important;
+  overflow-y: scroll;
+}
+
+.jumbotron {
+  width: 80% !important;
+  border-radius: 20px;
+  border: 1px solid #222222 !important;
+  padding-top: 0px !important;
+  /*box-shadow: 5px 5px 5px #555555;*/
+}
+
+.alert .notice {
+  margin-top: 20px;
+}
+
+.sister {
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#logo {
+  font-size: 10em;
+  color: grey;
+  letter-spacing: -8px;
+}
+
+#tagline {
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 2em;
+  color: black;
+}
+
+.pull-left{
+  color: white;
+}
+
+footer {
+  text-align: center;
+  margin: auto;
+}

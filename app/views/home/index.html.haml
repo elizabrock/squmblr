@@ -1,5 +1,6 @@
-%h1 squmblr
-%h2 It's like reddit, imgur and tumblr had a big beautiful baby.
+.center
+  %h1#logo.sister squmblr.
+  %h2#tagline A rimglr love child.
 
-- unless user_signed_in?
-  = link_to "I'm Ready!", new_user_registration_path
+  - unless user_signed_in?
+    = link_to "I'm Ready!", new_user_registration_path, class: "btn btn-large btn-primary"

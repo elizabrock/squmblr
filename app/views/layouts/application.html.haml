@@ -1,25 +1,44 @@
 !!!
-%html
+%html#html
   %head
     %title Squmblr
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Julius+Sans+One", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Cabin+Sketch", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Grand+Hotel", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Dawning+of+a+New+Day", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Cinzel+Decorative", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Sanchez", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Comfortaa", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Rokkitt", :rel => "stylesheet", :type => "text/css"}/
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      %ul.devise_navigation
-        - if user_signed_in?
-          %li= link_to 'Sign out', destroy_user_session_path, method: 'delete'
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-      %ul.main_navigation
-        %li= link_to "squmbls", posts_path
-        - if user_signed_in?
-          %li= link_to "write a squmbl", new_post_path
-          %li= link_to "edit profile", edit_user_registration_path
-          %li= link_to "profile", user_path(current_user)
-      = render partial: "shared/layout_buttons"
-
-    .alert= alert
-    .notice= notice
-    = yield
+    #container
+      %header#header
+        .container
+          %nav.navbar.navbar-default.navbar-inverse{:role => "navigation"}
+            .container-fluid
+              %ul.devise_navigation.nav.pull-right
+                - if user_signed_in?
+                  %li= link_to 'sign out', destroy_user_session_path, method: 'delete'
+                - else
+                  %li= link_to 'sign in', new_user_session_path
+              %ul.main_navigation.nav.pull-right
+                %li.pull-left= link_to "squmbls", posts_path
+                - if user_signed_in?
+                  %li.pull-left= link_to "write a squmbl", new_post_path
+                  %li.pull-left= link_to "profile", user_path(current_user)
+                  %li.pull-left= link_to "edit profile", edit_user_registration_path
+              = render partial: "shared/layout_buttons"
+      .container.jumbotron.center
+        .alert= alert
+        .notice= notice
+        = yield
+      %footer#footer_wrap.outer
+        %footer.inner
+          %p
+            %a.squirrel= link_to image_tag("squirrel.png", alt: "squmblr."), '/'
+            Copyright © 2014 Cohort Tangerine |
+            %a.githubFooterLink{:href => "https://github.com/elizabrock/squmblr"} Github

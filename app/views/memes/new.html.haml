@@ -1,0 +1,5 @@
+= simple_form_for(@meme) do |f|
+  = f.input :image, :as => :file
+  = f.input :top_text, :as => :text
+  = f.input :bottom_text, :as => :text
+  = f.button :submit, "Create Mememble"

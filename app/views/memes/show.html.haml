@@ -1,9 +1,5 @@
-.meme_show
-  = @meme.top_text
-  = @meme.bottom_text
-  = image_tag "doesitwork.jpg"
 
-#preview_meme
-  = @meme.top_text
-  = @meme.bottom_text
-  =image_tag 'doesitwork.jpg'
+
+#meme_box
+  = image_tag @meme.meme_path
+  = link_to "delete", @meme, :data => {:confirm => "Are you sure? dummy"}, :method => :delete

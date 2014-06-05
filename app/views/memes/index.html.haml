@@ -1,8 +1,9 @@
 %h1 All Memes
-
+= link_to "create new memeble", new_meme_path
 %ul
   - @memes.each do |meme|
     %a{:href => meme_path(meme.id)}
-      .meme
-        = meme.top_text
-        = meme.bottom_text
+      %li.meme_thumb
+        = image_tag meme.meme_path
+        = link_to "delete", meme, :data => {:confirm => "Are you sure? dummy"}, :method => :delete
+        = link_to "edit", edit_meme_path(meme)

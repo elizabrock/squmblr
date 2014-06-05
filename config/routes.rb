@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'comments/index'
+  get 'welcome/index'
 
   root to: "home#index"
 

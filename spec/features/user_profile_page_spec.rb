@@ -9,6 +9,7 @@ feature "User visits profile page" do
     login_as matt
     visit user_path(matt)
     page.should have_content "mknicos@gmail.com"
+    page.should have_content "This is your profile"
     page.should have_content "Drafts"
     page.should have_content "This is a draft"
   end
@@ -20,6 +21,7 @@ feature "User visits profile page" do
     page.should_not have_content "mknicos@gmail.com"
     page.should_not have_content "Drafts"
     page.should_not have_content "This is a draft"
+    page.should have_content "Follow this user"
   end
 
   scenario "user not logged in" do
@@ -28,5 +30,7 @@ feature "User visits profile page" do
     page.should_not have_content "mknicos@gmail.com"
     page.should_not have_content "Drafts"
     page.should_not have_content "This is a draft"
+    page.should_not have_content "This is your profile"
+    page.should_not have_content "Follow this user"
   end
 end

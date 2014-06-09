@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:github]
 
   has_many :posts
+  has_many :follows
+  has_many :followee_posts, through: :follows, source: :posts
   validates :username, uniqueness: true,
                        format: { with: /\A[a-zA-Z0-9]+\z/, message: "username can only contain letters and numbers"}
   validates_presence_of :email
@@ -39,6 +41,7 @@ class User < ActiveRecord::Base
     end
     user
   end
+  has_many :follows
 
   def gravatar_url
     md5 = Digest::MD5.new
@@ -50,5 +53,14 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     UserMailer.welcome_email(self).deliver
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+    else
+      where(conditions).first
+    end
   end
 end

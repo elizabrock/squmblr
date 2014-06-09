@@ -1,4 +1,7 @@
-%h1 Your Profile
+- if (current_user == @user)
+  %h1 Your Profile
+- else
+  %h1 #{@user.username}'s Profile
 = image_tag @user.gravatar_url
 %h3= @user.username
 %h4= @user.email
@@ -12,3 +15,19 @@
     = post.content
     = post.created_at
     = link_to "edit squmbl", edit_post_path(post.id)
+
+  %h1 You have squmbd:
+- else
+  %h1 #{@user.username}'s has squmbd:
+
+%ul.post
+  - @user.posts.each do |post|
+    .post
+      You squmbd:
+      = post.content
+      = post.created_at
+-if current_user
+  -if (current_user == @user)
+    %h4 This is your profile
+  -else
+    = link_to "Follow this user", user_follows_path(@user), method: :post

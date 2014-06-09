@@ -10,3 +10,17 @@
       = render partial: "shared/index_buttons", :locals => { :post => post }
 - if user_signed_in?
   = link_to 'new squmbl', new_post_path
+  - unless current_user.follows.empty?
+    %h2 You are following these people:
+    %ul.follow
+      - current_user.follows.each do |follow|
+        .follow
+          = follow.followee.username
+    %h2 They have squmbd:
+    %ul.followed_post
+      - current_user.followee_posts.each do |follow_post|
+        .followed_post
+          = follow_post.user.username
+          squmbd:
+          = follow_post.content
+          = follow_post.created_at

@@ -13,7 +13,7 @@ class RatingsController < ApplicationController
   end
 
   def update
-    @rating = Rating.find(params[:rating][:post_id])
+    @rating = Rating.find(params[:id])
     @rating.update!(:opinion => params[:rating][:opinion])
     respond_to do |format|
       format.html { redirect_to posts_path }

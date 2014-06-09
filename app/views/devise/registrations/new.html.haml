@@ -1,11 +1,9 @@
 - if resource.errors
   .alert Your account could not be created.
 
-%h2 Sign up
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.input :email, autofocus: true
-  = f.input :username
-  = f.input :password
-  = f.input :password_confirmation
+  = f.input :email, placeholder: "email", autofocus: true
+  = f.input :username, placeholder: "username"
+  = f.input :password, placeholder: "password"
+  = f.input :password_confirmation, placeholder: "retype password"
   = f.button :submit, "Sign up"
-= render "devise/shared/links"

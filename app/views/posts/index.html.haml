@@ -7,6 +7,7 @@
       = post.content
       = post.created_at
       = image_tag post.image_url(:thumb).to_s
+      = link_to 'view' , post_path(post)
       = render partial: "shared/index_buttons", :locals => { :post => post }
 - if user_signed_in?
   = link_to 'new squmbl', new_post_path

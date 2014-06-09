@@ -10,8 +10,11 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :follows
   has_many :followee_posts, through: :follows, source: :posts
+  has_many :comments
+
   validates :username, uniqueness: true,
                        format: { with: /\A[a-zA-Z0-9]+\z/, message: "username can only contain letters and numbers"}
+
   validates_presence_of :email
 
   after_create :send_welcome_email

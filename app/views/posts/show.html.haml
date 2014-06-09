@@ -1,5 +1,14 @@
+%h4 Squmble:
 .post
   = @post.user.username
   squmbd:
   = @post.content
   = @post.created_at
+
+  %h4 Comments:
+  %ul#comment_show
+    = render @post.comments
+
+  = simple_form_for(Comment.new, url: post_comments_path(@post)) do |f|
+    = f.input :comment, as: :text
+    = f.button :submit, "Comment"

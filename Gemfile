@@ -2,7 +2,6 @@ ruby '2.1.1'
 #ruby-gemset=squmblr
 source 'https://rubygems.org'
 
-gem 'acts_as_commentable'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'

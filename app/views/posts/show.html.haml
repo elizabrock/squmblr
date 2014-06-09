@@ -11,5 +11,4 @@
 
   = simple_form_for(Comment.new, url: post_comments_path(@post)) do |f|
     = f.input :comment, as: :text
-    = f.hidden_field :user_id, :value => current_user.id
     = f.button :submit, "Comment"

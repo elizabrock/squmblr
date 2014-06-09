@@ -1,23 +1,22 @@
 class CommentsController < ApplicationController
   skip_before_action :authenticate_user!
   def new
-  	@comment = Comment.new
+    @comment = Comment.new
   end
 
   def create
-    @user = current_user
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
-    if @comment.save
+    post = Post.find(params[:post_id])
+    comment = post.comments.build(comment_params)
+    comment.user = current_user
+    if comment.save
       flash[:notice] = "Your comment has been created"
-      redirect_to post_path (@post)
     else
       flash[:alert] = "Your comment could not be created"
-      redirect_to post_path (@post)
     end
+    redirect_to post_path (post)
   end
 
-  private 
+  private
 
   def comment_params
     params.require(:comment).permit(:comment, :post_id, :user_id)

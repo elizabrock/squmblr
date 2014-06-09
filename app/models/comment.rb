@@ -1,8 +1,5 @@
 class Comment < ActiveRecord::Base
 
-  include ActsAsCommentable::Comment
-
-  belongs_to :commentable, :polymorphic => true
   belongs_to :post
   belongs_to :user
 
@@ -11,5 +8,4 @@ class Comment < ActiveRecord::Base
   validates_presence_of :user
 
   default_scope -> { order('created_at ASC') }
-
 end

@@ -3,6 +3,10 @@ squmblr
 
 Meme Blogging / Nerd Tumblr
 
+[![Build Status](https://travis-ci.org/elizabrock/squmblr.svg?branch=master)](https://travis-ci.org/elizabrock/squmblr)
+
+[![Code Climate](https://codeclimate.com/github/elizabrock/squmblr.png)](https://codeclimate.com/github/elizabrock/squmblr)
+
 
 First PR Features:
 =========

@@ -40,6 +40,7 @@ group :test do
   gem 'fabrication'
   gem 'launchy'
   gem 'shoulda'
+  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end

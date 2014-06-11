@@ -37,6 +37,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'codeclimate-test-reporter', require: false
   gem 'fabrication'
   gem 'launchy'
   gem 'shoulda'

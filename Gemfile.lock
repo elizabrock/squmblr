@@ -42,6 +42,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    codeclimate-test-reporter (0.3.0)
+      simplecov (>= 0.7.1, < 1.0.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -249,6 +251,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   carrierwave
+  codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   devise
   email_spec
